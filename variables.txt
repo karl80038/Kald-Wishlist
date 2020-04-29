@@ -1,0 +1,9 @@
+navItemArray - contains links for the navigation bar
+    .url -> "www.google.com"
+    .title -> "Google"
+
+tableTitleArray - contains the titles for the table
+    .title -> "Color"
+
+tableContentArray - contains wish arrays
+    .itemArray -> "Apple iMac", "1", "1959.99$"

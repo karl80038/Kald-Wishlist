@@ -1,0 +1,21 @@
+<!-- Table module for EJS MVC-->
+<!-- © Karl-Erik Kald -->
+<table>
+
+    <tr>
+    <% forech (int i = 0; i < tableTitleArray.length; i++) { %>
+        <th><%= tableTitleArray[i].title %></th>
+    <% } %>
+    </tr>
+
+    <% foreach (int tRow = 0; tRow < tableContentArray.length; i++ ) { %>
+        <tr>
+            <% foreach (int cell = 0; cell < tableContentArray[tRow].itemArray.length; i++) { %>
+                <td><%tableContentArray[tRow].itemArray[cell]</td>
+            <% } %>
+        </tr>
+    <% } %>
+
+
+
+</table>
