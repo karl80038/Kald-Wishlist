@@ -2,20 +2,22 @@
 <!-- © Karl-Erik Kald -->
 <table>
 
-    <tr>
-    <% forech (int i = 0; i < tableTitleArray.length; i++) { %>
-        <th><%= tableTitleArray[i].title %></th>
-    <% } %>
-    </tr>
+    <table>
 
-    <% foreach (int tRow = 0; tRow < tableContentArray.length; i++ ) { %>
         <tr>
-            <% foreach (int cell = 0; cell < tableContentArray[tRow].itemArray.length; i++) { %>
-                <td><%tableContentArray[tRow].itemArray[cell]</td>
-            <% } %>
+        <% for (var i = 0; i < tableTitleArray.length; i++) { %>
+            <th> <%= tableTitleArray[i].title %> </th>
+        <% } %>
         </tr>
-    <% } %>
-
+        <% for (var tRow = 0; tRow < tableContentArray.length; tRow++) { %>
+            <tr>
+                <% for (var cell = 0; cell < tableContentArray[tRow].itemArray.length; cell++) { %>
+                    <td><%= tableContentArray[tRow].itemArray[cell] %></td> 
+                <% } %>
+            </tr>
+        <% } %>
+    
+    </table>
 
 
 </table>

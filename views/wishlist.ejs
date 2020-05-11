@@ -1,0 +1,37 @@
+<%- include('include/head.ejs') %>
+</head>
+<body>
+    <%- include('include/navbar.ejs') %>
+    <main>
+        <h1><%= pageTitle %></h1>
+        <p>List of all the wishes...</p>
+        
+        <% if(wishes.length > 0) { %>
+        <div class="grid">
+            <table class="wishTable">
+                <tr>
+                    <th><div id="manufacturer-title"> <%= wishMFGTitle %></div></th>
+                    <th><div id="model-title"><%= wishNameTitle %></div></th>
+                    <th><div id="color-title"><%= wishColorTitle %></div></th>
+                    <th><div id="price-title"><%= wishPriceTitle %></div></th>
+                </tr>
+            <% for(let wish of wishes) { %>
+
+                    <tr>
+                      <td><div id="manufacturer"> <%= wish.wishMFG %></div></td>
+                      <td><div id="model"><%= wish.wishName %></div></td>
+                      <td><div id="color"><%= wish.wishColor %></div></td>
+                      <td><div id="price"><%= wish.wishPrice %></div></td>
+                    </tr>
+
+            <% } %>
+        </table>
+
+        </div> 
+        <% } else { %>
+            <h1>No Wishes Found</h1>
+        <% } %>
+    </main>
+    <%- include ('include/footer.ejs') %>
+
+<%- include('include/end.ejs') %>

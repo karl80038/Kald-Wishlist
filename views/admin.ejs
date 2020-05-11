@@ -1,0 +1,34 @@
+<%- include('include/head.ejs') %>
+</head>
+<body>
+    <%- include('include/navbar.ejs') %>
+
+    <main>
+        <h1><%= pageTitle %></h1>
+        <p>Using the form below, you can add a new wish to the list</p>
+        <form class="product-form" action="/admin/add-wish" method="POST">
+                <table class="form-control">
+                    <tr>
+                        <td><label for="wishMFG">Manufacturer:</label></td>
+                        <td><input type="text" name="wishMFG" id="wishMFG"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="wishName">Name/Model:</label></td>
+                        <td><input type="text" name="wishName" id="wishName"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="wishColor">Color:</label></td>
+                        <td><input type="text" name="wishColor" id="wishColor"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="wishPrice">Price:</label></td>
+                        <td><input type="text" name="wishPrice" id="wishPrice"></td>
+                    </tr>
+                </table>
+            <button class="btn" type="submit">Add Product</button>
+        </form>
+    </main>
+
+    <%- include ('include/footer.ejs') %>
+
+<%- include('include/end.ejs') %>   

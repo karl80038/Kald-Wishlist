@@ -1,28 +1,43 @@
-//const products = [];
-const Wish = require('../models/wishes');
+const wishes = [];
+const Wish = require('../models/wish');
+var homeLink = {url: "/", title: "Home" };
+var addWish = {url: "/admin/add-wish", title: "Add Wish"};
+var navArray = [homeLink, addWish];
+var MFG = "Manufacturer"
+var Model = "Model"
+var Color = "Color";
+var Price = "Price";
+
+
 
 exports.getAddWishPage = 
     (req, res) => {
-    res.render('add-product', {
+    res.render('admin', {
         pageTitle: "Add New Wish",
+        navItemArray: navArray,
         path: "/admin/add-wish"
     });
 }
 
 exports.postWishes = (req, res) => {
-    console.log(req.body.title);
+    console.log(req.body.wishMFG);
     //products.push({title: req.body.title});
-    const product = new Wish(req.body.title);
-    product.saveProduct();
+    const wish = new Wish(req.body.wishMFG, req.body.wishName, req.body.wishColor, req.body.wishPrice );
+    wish.saveWish();
     res.redirect('/');
 }
 
 exports.getWishes = (req, res) => {
     
-    Product.fetchAllProducts((products)=>{
-        res.render('shop', {
-        pageTitle: 'Welcome to My Shop!',
-        products: products,
+    Wish.fetchAllWishes((wishes)=>{
+        res.render('wishlist', {
+        pageTitle: 'Welcome to the wishlist!',
+        navItemArray: navArray,
+        wishMFGTitle: MFG,
+        wishNameTitle: Model,
+        wishColorTitle: Color,
+        wishPriceTitle: Price,
+        wishes: wishes,
         path: '/'
         });
     })

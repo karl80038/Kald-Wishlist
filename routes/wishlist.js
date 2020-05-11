@@ -5,4 +5,7 @@ const adminData = require('./administration');
 const wishescontroller = require('../controllers/wishes');
 const router = express.Router();
 
+router.get('/', wishescontroller.getWishes);
+
+
 module.exports = router;
