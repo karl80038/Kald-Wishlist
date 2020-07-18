@@ -26,6 +26,17 @@ div.container {
     
     }
 }
+@supports (-ms-ime-align:auto) {
+    header, footer {
+        background-color: rgb(0, 139, 139);
+    }
+    .product-form {
+        background-color: whitesmoke;
+        padding: 30px;
+        padding-bottom: 40px;
+    
+    }
+}
 .footer-container {
     padding-left: 10%;
     float: left;
