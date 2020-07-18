@@ -3,6 +3,7 @@
 <body>
     <%- include('include/navbar.ejs') %>
     <main>
+        <div class="container">
         <h1><%= pageTitle %></h1>
         <p>List of all the wishes...</p>
         
@@ -31,7 +32,8 @@
         <% } else { %>
             <h1>No Wishes Found</h1>
         <% } %>
+        </div>
+        <%- include ('include/footer.ejs') %>
     </main>
-    <%- include ('include/footer.ejs') %>
-
+       
 <%- include('include/end.ejs') %>
