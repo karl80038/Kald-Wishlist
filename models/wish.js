@@ -1,7 +1,6 @@
 
 const fs = require('fs');
 const path = require('path');
-
 module.exports = class Wish {
     constructor(MFG, Model, Color, Price){
         this.wishMFG = MFG;
@@ -16,6 +15,8 @@ module.exports = class Wish {
         'data',
         'wishes.json'        
         );
+        
+        console.log(dataPath);
         fs.readFile(dataPath, (error, fileContent) => {
             let wishes = [];
             if(!error){
