@@ -2,7 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 module.exports = class Wish {
-    constructor(MFG, Model, Color, Price){
+    constructor(Type, MFG, Model, Color, Price){
+        this.wishType = Type;
         this.wishMFG = MFG;
         this.wishName = Model;
         this.wishColor = Color;

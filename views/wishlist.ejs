@@ -5,13 +5,14 @@
     <main>
         <div class="container">
         <h1><%= pageTitle %></h1>
-        <p>List of all the wishes...</p>
-        
+        <br>
         <% if(wishes.length > 0) { %>
+        <p>The items in the wishlist are listed as follows...</p>
         <div class="grid">
             <table class="wishTable">
                 <tr>
                     <th><div id="manufacturer-title"> <%= wishMFGTitle %></div></th>
+                    <th><div id="wish-title"> <%= wishTypeTitle %></div></th>
                     <th><div id="model-title"><%= wishNameTitle %></div></th>
                     <th><div id="color-title"><%= wishColorTitle %></div></th>
                     <th><div id="price-title"><%= wishPriceTitle %></div></th>
@@ -20,6 +21,7 @@
 
                     <tr>
                       <td><div id="manufacturer"> <%= wish.wishMFG %></div></td>
+                      <td><div id="type"> <%= wish.wishType %></div></td>
                       <td><div id="model"><%= wish.wishName %></div></td>
                       <td><div id="color"><%= wish.wishColor %></div></td>
                       <td><div id="price"><%= wish.wishPrice %></div></td>
@@ -30,7 +32,9 @@
 
         </div> 
         <% } else { %>
-            <h1>No Wishes Found</h1>
+            <div style="color: salmon;">
+                <h1>No Wishes Found</h1>
+            </div>
         <% } %>
         </div>
         <%- include ('include/footer.ejs') %>

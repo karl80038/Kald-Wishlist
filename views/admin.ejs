@@ -10,6 +10,10 @@
         <form class="product-form" action="/admin/add-wish" method="POST">
                 <table class="form-control">
                     <tr>
+                        <td><label for="wishType">Item type/category:</label></td>
+                        <td><input type="text" name="wishType" id="wishType"></td>
+                    </tr>
+                    <tr>
                         <td><label for="wishMFG">Manufacturer:</label></td>
                         <td><input type="text" name="wishMFG" id="wishMFG"></td>
                     </tr>
@@ -29,6 +33,12 @@
             <button class="btn" type="submit">Add Product</button>
         </form>
         </div>
+        <% if (showModal == true) 
+        {%>
+            <%- include ('include/modal.ejs') %>
+
+        <%}%>    
+        
     <%- include ('include/footer.ejs') %>
     </main>
     
